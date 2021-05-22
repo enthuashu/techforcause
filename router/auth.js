@@ -71,9 +71,9 @@ router.post('/signin', async (req, res) => {
 
 router.post('/contact', async (req, res) => {
     const { name, email, phone, subject } = req.body;
-
+    console.log("Hello")
     if (!name || !email || !phone || !subject) {
-        return res.status(421).json({ error: "Please Fill the Details Properly" });
+        return res.status(427).json({ error: "Please Fill the Details Properly" });
     }
     try {
 

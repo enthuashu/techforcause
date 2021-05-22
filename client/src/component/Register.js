@@ -48,7 +48,8 @@ function Register() {
       setuser({ name: "", phone: "", email: "", password: "", cpassword: "" })
       history.push("/login")
     } else {
-      window.alert("Please Fill the Details Properly!")
+      // window.alert("Please Fill the tails Properly!")
+      throw Error;
     }
 
   }

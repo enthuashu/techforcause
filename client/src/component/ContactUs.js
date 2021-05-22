@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import axios from 'axios'
 
 
 function ContactUs() {
@@ -19,22 +19,26 @@ function ContactUs() {
   const PostData = async (e) => {
     e.preventDefault();
     const { name, phone, email, subject } = contact;
-    const res = await fetch("/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name, phone, email, subject
-      })
-    });
+    try {
+      const res = await fetch('/contact', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name, phone, email, subject
+        })
+      });
 
 
-    if (res.status === 201) {
+      if (res.status === 201) {
 
-      window.alert("Your Details has been submitted! Someone from our team will contact you soon.")
-    } else {
-      window.alert("Please Fill your details properly!")
+        window.alert("Your Details has been submitted! Someone from our team will contact you soon.")
+      } else {
+        window.alert("Please Fill your details properly!")
+      }
+    } catch (error) {
+      console.log(error)
     }
 
 
