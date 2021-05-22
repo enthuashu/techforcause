@@ -9,9 +9,6 @@ const authenticate = require("../middleware/authenticate")
 
 
 
-router.get('/', (req, res) => {
-    res.send("Hello World from the Server");
-})
 
 
 
