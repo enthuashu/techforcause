@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import hospitalPNG from "../../images/oxygen.png";
 import { useHistory } from "react-router-dom"
-
+import { UserContext } from '../../App'
 const oxyApiData = [
   {
     imgsrc: `${hospitalPNG}`,
@@ -41,7 +41,7 @@ const oxyApiData = [
 ];
 function OxygenCylinderApi() {
   const history = useHistory();
-
+  const { state, dispatch } = useContext(UserContext)
   const callPage = async () => {
     try {
       const res = await fetch('/checkbed', {
@@ -53,7 +53,7 @@ function OxygenCylinderApi() {
         credentials: "include"
       });
       const data = await res.json();
-
+      dispatch({ type: "USER", payload: true })
 
       if (!res.status === 200) {
         const error = new Error(res.error)

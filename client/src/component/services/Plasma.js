@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import hospitalPNG from "../../images/plasma.png";
 import { useHistory } from "react-router-dom"
+import { UserContext } from '../../App'
 
 const plasmaAPI = [
     {
@@ -42,7 +43,7 @@ const plasmaAPI = [
 function Plasma() {
 
     const history = useHistory();
-
+    const { state, dispatch } = useContext(UserContext)
     const callPage = async () => {
         try {
             const res = await fetch('/checkbed', {
@@ -54,7 +55,7 @@ function Plasma() {
                 credentials: "include"
             });
             const data = await res.json();
-
+            dispatch({ type: "USER", payload: true })
 
             if (!res.status === 200) {
                 const error = new Error(res.error)

@@ -174,7 +174,7 @@ function Volunteer() {
                         <ul class="list-unstyled mb-0">
                             <li>
                                 <i class="fas fa-map-marker-alt fa-2x font__icon"></i>
-                                <p>Goarakhpur, Uttar Pradesh, India</p>
+                                <p>Gorakhpur, Uttar Pradesh, India</p>
                             </li>
 
                             <li>

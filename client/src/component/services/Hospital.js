@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import hospitalPNG from "../../images/hospital.png";
 import { useHistory } from "react-router-dom"
+import { UserContext } from '../../App'
 
 const hospitalAPI = [
     {
@@ -41,7 +42,7 @@ const hospitalAPI = [
 ];
 function Hospital() {
     const history = useHistory();
-
+    const { state, dispatch } = useContext(UserContext)
     const callPage = async () => {
         try {
             const res = await fetch('/checkbed', {
@@ -53,7 +54,7 @@ function Hospital() {
                 credentials: "include"
             });
             const data = await res.json();
-
+            dispatch({ type: "USER", payload: true })
 
             if (!res.status === 200) {
                 const error = new Error(res.error)

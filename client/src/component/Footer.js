@@ -10,7 +10,8 @@ const Footer = () => {
           <div class="row">
             <div class="col-sm-12 col-md-6">
               <h6>About</h6>
-              <p class="text-justify">Home to hospital (H2H) is an initiative towards solving the problem of finding covid resources in a situation where time is of great essence. H2H is a non profitable service provider which works to provide ease to government and patient on a single platform, which shows details of availablity of bed, medicine, covid resources and some other medical services at a single spot</p>
+              <p class="text-justify">Home to hospital (H2H) is an initiative towards solving the problem of finding covid resources in a situation where time is of great essence. H2H is a non profitable service provider which works to provide ease to government and patient on a single platform, which shows details of availablity of bed, medicine, covid resources and some other medical services at a single spot.</p>
+              <button class="btn" ><Link to="/about" >Know More</Link></button>
             </div>
 
             <div class="col-xs-6 col-md-3">
@@ -33,7 +34,7 @@ const Footer = () => {
               <ul class="footer-links">
                 <li><Link exact to="/register">SignUp</Link></li>
                 <li><Link exact to="/login">SignIn</Link></li>
-                <li><Link exact to="/">AboutUs</Link></li>
+                <li><Link exact to="/about">AboutUs</Link></li>
                 <li><Link exact to="/contacts">Contact Us</Link></li>
 
               </ul>

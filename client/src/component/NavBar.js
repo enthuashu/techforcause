@@ -119,12 +119,25 @@ function NavBar() {
                   <li className="nav-item">
                     <NavLink
                       activeClassName="nav-link activenav"
+                      to="/welcome"
+                      className="nav-link"
+
+                    >
+                      Dashboard
+                </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      activeClassName="nav-link activenav"
                       to="/volunteer"
                       className="nav-link"
 
                     >
                       Volunteer
                 </NavLink>
+                  </li>
+                  <li className="nav-item">
+
                   </li>
                   <li className="nav-item">
                     <NavLink
@@ -273,6 +286,16 @@ function NavBar() {
                       </li>
 
                     </ul>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      activeClassName="nav-link activenav"
+                      to="/welcome"
+                      className="nav-link"
+
+                    >
+                      Dashboard
+                </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink

@@ -17,7 +17,7 @@ body {
 }
 #navbarSupportedContent > ul > li:nth-child(n) > a {
   color: #000000;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 #navbarSupportedContent > ul > li:nth-child(n) > a:hover {
   color: #311b92;

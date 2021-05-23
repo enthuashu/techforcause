@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useHistory } from "react-router-dom"
 import img5 from './images/2.png'
 import img3 from './images/3.jpg'
@@ -9,10 +9,11 @@ import img1 from './images/8.jpg'
 
 import img2 from './images/10.png'
 import Mainservice from '../Mainservice'
-
+import { UserContext } from '../../App'
 
 const Welcome = () => {
     const history = useHistory();
+    const { state, dispatch } = useContext(UserContext)
     const [userdata, setdata] = useState("");
     const callPage = async () => {
         try {
@@ -26,7 +27,7 @@ const Welcome = () => {
             });
             const data = await res.json();
             setdata(data.name)
-
+            dispatch({ type: "USER", payload: true })
             if (!res.status === 200) {
                 const error = new Error(res.error)
                 throw error;

@@ -1,7 +1,43 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import MainSvg from "./MainSvg";
+import { Link, useHistory } from 'react-router-dom'
+import { UserContext } from '../App'
+
 
 function Main() {
+  const history = useHistory();
+  const { state, dispatch } = useContext(UserContext)
+
+  const callPage = async () => {
+    try {
+      const res = await fetch('/checkbed', {
+
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        credentials: "include"
+      });
+      const data = await res.json();
+
+      dispatch({ type: "USER", payload: true })
+      if (!res.status === 200) {
+        const error = new Error(res.error)
+        throw error;
+      }
+
+    } catch (error) {
+      console.log(error);
+      history.push('/')
+    }
+  }
+
+  useEffect(() => {
+    callPage();
+
+  }, []);
+
+
   return (
     <div className=" main__section d-flex justify-content-center align-items-center">
       <div className="container">
@@ -13,8 +49,11 @@ function Main() {
                 <span style={{ color: "#311b92" }} >Home to Hospital (H2H)</span> is an initiative towards solving the problem of finding covid resources in a situation where time is of great essence. H2H is a non profitable service provider which works to provide ease to government and patient on a single platform, which shows details of availablity of bed, medicine, covid resources and some other medical services at a single spot.
             </p>
               <button type="button" class="btn">
-                Get to Know More
-            </button>
+                <Link to="/about" >
+
+                  Get to Know More
+              </Link>
+              </button>
             </div>
 
           </div>
