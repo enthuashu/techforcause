@@ -48,12 +48,13 @@ function Main() {
               <p style={{ textAlign: "left" }} className="text__main">
                 <span style={{ color: "#311b92" }} >Home to Hospital (H2H)</span> is an initiative towards solving the problem of finding covid resources in a situation where time is of great essence. H2H is a non profitable service provider which works to provide ease to government and patient on a single platform, which shows details of availablity of bed, medicine, covid resources and some other medical services at a single spot.
             </p>
-              <button type="button" class="btn">
-                <Link to="/about" >
 
+              <Link exact to='/about' >
+                <button type="button" className="btn" >
                   Get to Know More
+                 </button>
               </Link>
-              </button>
+
             </div>
 
           </div>
