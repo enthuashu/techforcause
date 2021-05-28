@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(require('./router/auth'))
 
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV != "production") {
     app.use(express.static(path.join(__dirname, 'client/build')));
     app.get('*', function (req, res) {
         res.sendFile('/client/build/index.html', { root: __dirname }, function (err) {

@@ -1,6 +1,6 @@
 import { initialState, reducer } from "../src/component/reducer/UseReducer"
-import React, { createContext, useReducer } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import React, { createContext, useReducer, useEffect } from "react";
+import { Switch, Route, Redirect, useLocation } from "react-router-dom";
 import "./App.css";
 import Caraousel from "./component/Caraousel";
 import ContactUs from "./component/ContactUs";
@@ -26,6 +26,13 @@ export const UserContext = createContext();
 const App = () => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
 
   return (
     <div>

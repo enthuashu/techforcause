@@ -4,6 +4,10 @@ const jwt = require('jsonwebtoken')
 
 
 const contactSchema = new mongoose.Schema({
+    date: {
+        type: Date,
+        default: Date.now()
+    },
     name: {
         type: String,
         required: true

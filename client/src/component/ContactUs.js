@@ -34,6 +34,9 @@ function ContactUs() {
       if (res.status === 201) {
 
         window.alert("Your Details has been submitted! Someone from our team will contact you soon.")
+        setContact({
+          name: "", phone: "", email: "", subject: ""
+        })
       } else {
         window.alert("Please Fill your details properly!")
       }
