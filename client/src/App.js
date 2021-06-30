@@ -1,4 +1,4 @@
-import { initialState, reducer } from "../src/component/reducer/UseReducer"
+import { initialState, reducer } from "../src/component/reducer/UseReducer";
 import React, { createContext, useReducer, useEffect } from "react";
 import { Switch, Route, Redirect, useLocation } from "react-router-dom";
 import "./App.css";
@@ -9,8 +9,8 @@ import Main from "./component/Main";
 import NavBar from "./component/NavBar";
 import Login from "./component/Login";
 import Register from "./component/Register";
-
-import Hospital from './component/services/Hospital'
+import Maintenance from "./component/Maintenance";
+import Hospital from "./component/services/Hospital";
 import Food from "./component/services/Food";
 import Bed from "./component/services/Bed";
 import Medicine from "./component/services/Medicine";
@@ -18,13 +18,12 @@ import Plasma from "./component/services/Plasma";
 import Volunteer from "./component/services/Volunteer";
 import Oxygen from "./component/services/Oxygen";
 import About from "./component/About";
-import Welcome from "./component/private/Welcome"
+import Welcome from "./component/private/Welcome";
 import Mainservice from "./component/Mainservice";
 import Logout from "./component/Logout";
 export const UserContext = createContext();
 
 const App = () => {
-
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const { pathname } = useLocation();
@@ -33,13 +32,13 @@ const App = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-
   return (
     <div>
-      <UserContext.Provider value={{ state, dispatch }} >
+      <UserContext.Provider value={{ state, dispatch }}>
         <Switch>
           <Route exact path="/">
             <NavBar />
+            <Maintenance />
             <Main />
             <Mainservice />
             <Caraousel />
@@ -128,17 +127,13 @@ const App = () => {
             <Footer />
           </Route>
           <Route exact path="/logout">
-
             <Logout />
-
           </Route>
           <Redirect to="/" />
         </Switch>
-
       </UserContext.Provider>
-
     </div>
   );
-}
+};
 
 export default App;
