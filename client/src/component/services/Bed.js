@@ -1,109 +1,113 @@
 import React, { useEffect, useContext } from "react";
 import hospitalPNG from "../../images/beds.png";
-import { useHistory } from 'react-router-dom'
-import { UserContext } from '../../App'
-
-
+import { useHistory } from "react-router-dom";
+import { UserContext } from "../../App";
 
 const bedAPI = [
-    {
-        imgsrc: `${hospitalPNG}`,
-        name: "H1",
-        available: 20,
-    },
-    {
-        imgsrc: `${hospitalPNG}`,
-        name: "H1",
-        available: 20,
-    },
-    {
-        imgsrc: `${hospitalPNG}`,
-        name: "H1",
-        available: 20,
-    },
-    {
-        imgsrc: `${hospitalPNG}`,
-        name: "H1",
-        available: 20,
-    },
-    {
-        imgsrc: `${hospitalPNG}`,
-        name: "H1",
-        available: 20,
-    },
-    {
-        imgsrc: `${hospitalPNG}`,
-        name: "H1",
-        available: 20,
-    },
-    {
-        imgsrc: `${hospitalPNG}`,
-        name: "H1",
-        available: 20,
-    },
+  {
+    imgsrc: `${hospitalPNG}`,
+    name: "Kamakhya Hospital",
+    available: 35,
+  },
+  {
+    imgsrc: `${hospitalPNG}`,
+    name: "Chandan Hospital",
+    available: 93,
+  },
+  {
+    imgsrc: `${hospitalPNG}`,
+    name: "Appollo Medics Hospital",
+    available: 74,
+  },
+  {
+    imgsrc: `${hospitalPNG}`,
+    name: "Nova Hospital",
+    available: 13,
+  },
+  {
+    imgsrc: `${hospitalPNG}`,
+    name: "Vedanta Lucknow",
+    available: 50,
+  },
+  {
+    imgsrc: `${hospitalPNG}`,
+    name: "Sushma Hospital",
+    available: 20,
+  },
+  {
+    imgsrc: `${hospitalPNG}`,
+    name: "MedWell Hospital",
+    available: 25,
+  },
 ];
 function Bed() {
-    const history = useHistory();
-    const { state, dispatch } = useContext(UserContext)
+  const history = useHistory();
+  const { state, dispatch } = useContext(UserContext);
 
-    const callPage = async () => {
-        try {
-            const res = await fetch('/checkbed', {
+  const callPage = async () => {
+    try {
+      const res = await fetch("/checkbed", {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+      const data = await res.json();
+      dispatch({ type: "USER", payload: true });
 
-                headers: {
-                    "Accept": "application/json",
-                    "Content-Type": "application/json"
-                },
-                credentials: "include"
-            });
-            const data = await res.json();
-            dispatch({ type: "USER", payload: true })
-
-            if (!res.status === 200) {
-                const error = new Error(res.error)
-                throw error;
-            }
-
-        } catch (error) {
-            console.log(error);
-            history.push('/login')
-        }
+      if (!res.status === 200) {
+        const error = new Error(res.error);
+        throw error;
+      }
+    } catch (error) {
+      console.log(error);
+      history.push("/login");
     }
+  };
 
-    useEffect(() => {
-        callPage();
+  useEffect(() => {
+    callPage();
+  }, []);
 
-    }, []);
-
-
-    return (
-        <div className="container">
-            <h1 style={{ backgroundColor: "#311b92", color: "#ffffff", padding: '8px', borderRadius: '0.5rem' }} className="text-center p-5">Bed Availability Data</h1>
-            {bedAPI.map((bedData, index) => {
-                return (
-                    <div class="card mb-3 shadow p-3 mb-5 bg-body rounded">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <img
-                                    src={bedData.imgsrc}
-                                    class="img-fluid img-thumbnail data__image"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">{bedData.name}</h5>
-                                    <p class="card-text">
-                                        Available Cylinder : {bedData.available}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                );
-            })}
-        </div>
-    );
+  return (
+    <div className="container">
+      <h1
+        style={{
+          backgroundColor: "#311b92",
+          color: "#ffffff",
+          padding: "8px",
+          borderRadius: "0.5rem",
+        }}
+        className="text-center p-5"
+      >
+        Bed Availability Data
+      </h1>
+      {bedAPI.map((bedData, index) => {
+        return (
+          <div class="card mb-3 shadow p-3 mb-5 bg-body rounded">
+            <div class="row g-0">
+              <div class="col-4">
+                <img
+                  src={bedData.imgsrc}
+                  class="img-fluid img-thumbnail data__image"
+                  alt=""
+                />
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title">{bedData.name}</h5>
+                  <p class="card-text">
+                    Available Cylinder : {bedData.available}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 export default Bed;
