@@ -1,43 +1,70 @@
 import React, { useEffect, useContext } from "react";
-import hospitalPNG from "../../images/beds.png";
+import medanta from "../../images/Medanta.jpg";
+import aone from "../../images/aone.jpg";
+import arpit from "../../images/arpit.jpg";
+import rachit from "../../images/rachit.jpg";
+import seva from "../../images/seva.jpg";
+import shivay from "../../images/shivay.jpg";
+import city from "../../images/city.jpg";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../App";
 
 const bedAPI = [
   {
-    imgsrc: `${hospitalPNG}`,
-    name: "Kamakhya Hospital",
+    imgsrc: `${medanta}`,
+    name: "Medanta Hospital",
     available: 35,
+    address: "Gorakhpur",
+    icu: "No",
+    phone: "+919856235647",
   },
   {
-    imgsrc: `${hospitalPNG}`,
-    name: "Chandan Hospital",
+    imgsrc: `${aone}`,
+    name: "A-One Hospital",
     available: 93,
+    address: "Gorakhpur",
+    icu: "Yes",
+    phone: "+919856244539",
   },
   {
-    imgsrc: `${hospitalPNG}`,
-    name: "Appollo Medics Hospital",
+    imgsrc: `${arpit}`,
+    name: "Arpit Hospital",
     available: 74,
+    address: "Gorakhpur",
+    icu: "Yes",
+    phone: "+919586598547",
   },
   {
-    imgsrc: `${hospitalPNG}`,
-    name: "Nova Hospital",
+    imgsrc: `${rachit}`,
+    name: "Rachit Hospital",
     available: 13,
+    address: "Gorakhpur",
+    icu: "No",
+    phone: "+919856458798",
   },
   {
-    imgsrc: `${hospitalPNG}`,
-    name: "Vedanta Lucknow",
+    imgsrc: `${seva}`,
+    name: "Seva Hospital",
     available: 50,
+    address: "Gorakhpur",
+    icu: "Yes",
+    phone: "+919658465795",
   },
   {
-    imgsrc: `${hospitalPNG}`,
-    name: "Sushma Hospital",
+    imgsrc: `${shivay}`,
+    name: "Shivaay Hospital",
     available: 20,
+    address: "Gorakhpur",
+    icu: "Yes",
+    phone: "+919532146589",
   },
   {
-    imgsrc: `${hospitalPNG}`,
-    name: "MedWell Hospital",
+    imgsrc: `${city}`,
+    name: "City Hospital",
     available: 25,
+    address: "Gorakhpur",
+    icu: "No",
+    phone: "+919568214578",
   },
 ];
 function Bed() {
@@ -96,9 +123,21 @@ function Bed() {
               </div>
               <div class="col-8">
                 <div class="card-body">
-                  <h5 class="card-title">{bedData.name}</h5>
+                  <h5 class="title card-title">{bedData.name}</h5>
                   <p class="card-text">
-                    Available Cylinder : {bedData.available}
+                    {" "}
+                    <span>Available Beds:</span> {bedData.available}
+                  </p>
+                  <p class="card-text">
+                    <span>ICU Facility :</span> {bedData.icu}
+                  </p>
+                  <p class="card-text">
+                    {" "}
+                    <span> Contact :</span> {bedData.phone}
+                  </p>
+                  <p class="card-text">
+                    {" "}
+                    <span> Address :</span> {bedData.address}
                   </p>
                 </div>
               </div>
@@ -106,6 +145,10 @@ function Bed() {
           </div>
         );
       })}
+      <p style={{ fontWeight: "bold" }}>
+        Note: The Data being shown here are dummy right no, just to explain the
+        working of the platform!
+      </p>
     </div>
   );
 }

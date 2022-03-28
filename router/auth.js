@@ -7,54 +7,55 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const authenticate = require("../middleware/authenticate");
 
-router.post("/register", async (req, res) => {
+router.post("/api/register", async (req, res) => {
   const { name, phone, email, password, cpassword } = req.body;
 
-  if (!name || !email || !phone || !password || !cpassword) {
-    return res.status(422).json({ error: "Please Fill the Details Properly" });
-  }
   try {
     const userExist = await User.findOne({ email });
     if (userExist) {
-      return res.status(350).json({ error: "Email Already Exist" });
-    } else if (password != cpassword) {
-      return res.status(300).json({ message: "Password are not matching" });
-    } else {
-      const user = new User({ name, email, phone, password, cpassword });
-
-      await user.save();
-      res.status(201).json({ message: "User Registerd Successfully" });
+      return res
+        .status(400)
+        .json({ success: false, error: "Email already exists" });
     }
+    const user = new User({ name, email, phone, password, cpassword });
+
+    await user.save();
+    res
+      .status(201)
+      .json({ success: true, message: "User Registerd Successfully" });
   } catch (error) {
     console.log(error);
+    return res.status(400).json({ success: false, error: error.message });
   }
 });
 
-router.post("/signin", async (req, res) => {
+router.post("/api/signin", async (req, res) => {
   try {
     let token;
     const { email, password } = req.body;
-    if (!email || !password) {
-      return res.status(422).json("Empty fields");
-    }
+
     const userlogin = await User.findOne({ email });
     if (userlogin) {
       const isMatch = await bcrypt.compare(password, userlogin.password);
       if (!isMatch) {
-        res.status(400).json({ error: "Invalid credentials" });
+        return res
+          .status(400)
+          .json({ success: false, error: "Invalid password" });
       } else {
         token = await userlogin.generateAuthToken();
         res.cookie("jwtoken", token, {
           expires: new Date(Date.now() + 25892000000),
           httpOnly: true,
         });
-        res.status(201).json({ message: "User Signedin Successfully" });
+        res
+          .status(201)
+          .json({ success: true, message: "User Signedin Successfully" });
       }
     } else {
-      res.json({ error: "Invalid details" });
+      res.status(400).json({ error: "User not found" });
     }
   } catch (error) {
-    console.log(error);
+    return res.status(400).json({ success: false, error: error.message });
   }
 });
 

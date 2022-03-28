@@ -8,7 +8,7 @@ const Maintenance = () => {
           <p>This Website is currently in Maintenance!</p>
         </blockquote>
         <figcaption class="blockquote-footer">
-          Team<cite title="Source Title text-blue "> Home 2 Hospital</cite>
+          Team<cite title="Source Title text-blue "> Tech For Cause</cite>
         </figcaption>
       </figure>
     </div>

@@ -1,56 +1,61 @@
 import React, { useState } from "react";
-import axios from 'axios'
-
+import axios from "axios";
 
 function ContactUs() {
-
   const [contact, setContact] = useState({
-    name: "", phone: "", email: "", subject: ""
-  })
+    name: "",
+    phone: "",
+    email: "",
+    subject: "",
+  });
   let name, value;
   const handleInputs = (e) => {
     name = e.target.name;
     value = e.target.value;
     setContact({
-      ...contact, [name]: value
-    })
-
-  }
+      ...contact,
+      [name]: value,
+    });
+  };
   const PostData = async (e) => {
     e.preventDefault();
     const { name, phone, email, subject } = contact;
     try {
-      const res = await fetch('/contact', {
+      const res = await fetch("/contact", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name, phone, email, subject
-        })
+          name,
+          phone,
+          email,
+          subject,
+        }),
       });
 
-
       if (res.status === 201) {
-
-        window.alert("Your Details has been submitted! Someone from our team will contact you soon.")
+        window.alert(
+          "Your Details has been submitted! Someone from our team will contact you soon."
+        );
         setContact({
-          name: "", phone: "", email: "", subject: ""
-        })
+          name: "",
+          phone: "",
+          email: "",
+          subject: "",
+        });
       } else {
-        window.alert("Please Fill your details properly!")
+        window.alert("Please Fill your details properly!");
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-
-
-  }
+  };
   return (
     <div className="container p-5">
       <section class="mb-4">
         <h2 class="h1-responsive font-weight-bold text-center my-4">
-          Contact us
+          Contact Us
         </h2>
 
         <p class="text-center w-responsive mx-auto mb-5">
@@ -61,12 +66,7 @@ function ContactUs() {
 
         <div class="row">
           <div class="col-md-9 mb-md-0 mb-5">
-            <form
-              id="contact-form"
-              name="contact-form"
-              method="POST"
-
-            >
+            <form id="contact-form" name="contact-form" method="POST">
               <div class="row">
                 <div class="col-md-6">
                   <div class="md-form mb-0">
@@ -82,7 +82,6 @@ function ContactUs() {
                       class="form-control"
                       required
                     />
-
                   </div>
                 </div>
 
@@ -100,7 +99,6 @@ function ContactUs() {
                       class="form-control"
                       required
                     />
-
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -117,12 +115,9 @@ function ContactUs() {
                       class="form-control"
                       required
                     />
-
                   </div>
                 </div>
               </div>
-
-
 
               <div class="row">
                 <div class="col-md-12">
@@ -138,7 +133,6 @@ function ContactUs() {
                       required
                       class="form-control md-textarea"
                     ></textarea>
-
                   </div>
                 </div>
               </div>
@@ -151,7 +145,6 @@ function ContactUs() {
                 onClick={PostData}
                 placeholder="Submit"
               />
-
             </div>
             <div class="status"></div>
           </div>
@@ -165,12 +158,12 @@ function ContactUs() {
 
               <li>
                 <i class="fas fa-phone mt-4 fa-2x font__icon"></i>
-                <p>+ 91 234 567 89</p>
+                <p>+ 91 8957885798</p>
               </li>
 
               <li>
                 <i class="fas fa-envelope mt-4 fa-2x font__icon"></i>
-                <p>contact@home2hospital.com</p>
+                <p>enthuashu@gmail.com</p>
               </li>
             </ul>
           </div>

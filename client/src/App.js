@@ -20,6 +20,7 @@ import Oxygen from "./component/services/Oxygen";
 import About from "./component/About";
 import Welcome from "./component/private/Welcome";
 import Mainservice from "./component/Mainservice";
+import Team from "./component/tfc/team";
 import Logout from "./component/Logout";
 export const UserContext = createContext();
 
@@ -115,6 +116,13 @@ const App = () => {
           <Route exact path="/about">
             <NavBar />
             <About />
+            <Caraousel />
+            <ContactUs />
+            <Footer />
+          </Route>
+          <Route exact path="/team">
+            <NavBar />
+            <Team />
             <Caraousel />
             <ContactUs />
             <Footer />

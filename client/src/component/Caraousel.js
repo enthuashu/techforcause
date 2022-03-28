@@ -12,7 +12,7 @@ function Caraousel() {
         id="carouselExampleCaptions"
         className="carousel carousel-dark slide carousel-fade"
         data-bs-ride="carousel"
-        data-interval='1000'
+        data-interval="1000"
       >
         <div className="carousel-indicators">
           <button
@@ -52,46 +52,46 @@ function Caraousel() {
           <div className="carousel-item active">
             <img src={img1} className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
+              {/* <h5>First slide label</h5>
               <p>
                 Some representative placeholder content for the first slide.
-              </p>
+              </p> */}
             </div>
           </div>
           <div className="carousel-item">
             <img src={img2} className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
+              {/* <h5>Second slide label</h5>
               <p>
                 Some representative placeholder content for the second slide.
-              </p>
+              </p> */}
             </div>
           </div>
           <div className="carousel-item">
             <img src={img3} className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
+              {/* <h5>Third slide label</h5>
               <p>
                 Some representative placeholder content for the third slide.
-              </p>
+              </p> */}
             </div>
           </div>
           <div className="carousel-item">
             <img src={img4} className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
+              {/* <h5>Third slide label</h5>
               <p>
                 Some representative placeholder content for the third slide.
-              </p>
+              </p> */}
             </div>
           </div>
           <div className="carousel-item">
             <img src={img5} className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
+              {/* <h5>Third slide label</h5>
               <p>
                 Some representative placeholder content for the third slide.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -101,7 +101,10 @@ function Caraousel() {
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="prev"
         >
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
           <span className="visually-hidden">Previous</span>
         </button>
         <button
@@ -110,7 +113,10 @@ function Caraousel() {
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="next"
         >
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
           <span className="visually-hidden">Next</span>
         </button>
       </div>

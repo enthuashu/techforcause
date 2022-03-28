@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../images/h2hlogo.png";
-import { UserContext } from '../App'
+import Logo from "../images/logo.png";
+import { UserContext } from "../App";
 
 function NavBar() {
   const { state, dispatch } = useContext(UserContext);
   const RenderMenu = () => {
-
     if (state) {
       return (
         <>
@@ -17,9 +16,13 @@ function NavBar() {
                 className="navbar-brand ps-5"
                 to="/"
               >
-                <img alt="logo" src={Logo} className="nav__logo d-inline-block " />
-             Home 2 Hospital
-          </NavLink>
+                <img
+                  alt="logo"
+                  src={Logo}
+                  className="nav__logo d-inline-block "
+                />
+                Tech For Cause
+              </NavLink>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -28,11 +31,14 @@ function NavBar() {
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
-                style={{ backgroundColor: '#311b92' }}
+                style={{ backgroundColor: "#311b92" }}
               >
                 <span className="navbar-toggler-icon"></span>
               </button>
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <div
+                className="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0 pe-5 ps-5">
                   <li className="nav-item">
                     <NavLink
@@ -41,79 +47,82 @@ function NavBar() {
                       className="nav-link"
                     >
                       Home
-                </NavLink>
+                    </NavLink>
                   </li>
                   <li className="nav-item dropdown">
                     <NavLink
                       to="/"
                       className="nav-link dropdown-toggle"
-
                       id="navbarDarkDropdownMenuLink"
                       role="button"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
                       Services
-                </NavLink>
+                    </NavLink>
                     <ul
                       className="dropdown-menu dropdown-menu-dark"
                       aria-labelledby="navbarDarkDropdownMenuLink"
                     >
                       <li>
-                        <NavLink exact to="/beds" className="dropdown-item" >
+                        <NavLink exact to="/beds" className="dropdown-item">
                           Beds
-                    </NavLink>
+                        </NavLink>
                       </li>
                       <li>
-                        <NavLink exact to="/oxygen" className="dropdown-item" >
+                        <NavLink exact to="/oxygen" className="dropdown-item">
                           Oxygen Cylinder
-                    </NavLink>
+                        </NavLink>
                       </li>
                       <li>
-                        <NavLink exact to="/hospital" className="dropdown-item" >
+                        <NavLink exact to="/hospital" className="dropdown-item">
                           Hospital Contact
-                    </NavLink>
-
+                        </NavLink>
                       </li>
 
                       <li>
-                        <NavLink exact to="/food" className="dropdown-item" >
+                        <NavLink exact to="/food" className="dropdown-item">
                           Food Services
-                    </NavLink>
-
+                        </NavLink>
                       </li>
                       <li>
-                        <NavLink exact to="/plasma" className="dropdown-item" >
+                        <NavLink exact to="/plasma" className="dropdown-item">
                           Plasma
-                    </NavLink>
-
+                        </NavLink>
                       </li>
 
                       <li>
-                        <NavLink exact to="/medicine" className="dropdown-item" >
+                        <NavLink exact to="/medicine" className="dropdown-item">
                           Medicine
-                    </NavLink>
-
+                        </NavLink>
                       </li>
                       <li>
-                        <a href="https://covidhelp-mmmut.herokuapp.com/mentalhelp" target="_ashu" className="dropdown-item" >
+                        <a
+                          href="https://covidhelp-mmmut.herokuapp.com/mentalhelp"
+                          target="_ashu"
+                          className="dropdown-item"
+                        >
                           Mental Help
-                    </a>
-
+                        </a>
                       </li>
                       <li>
-                        <NavLink exact to="/volunteer" className="dropdown-item" >
+                        <NavLink
+                          exact
+                          to="/volunteer"
+                          className="dropdown-item"
+                        >
                           Volunteer Resources
-                    </NavLink>
-
+                        </NavLink>
                       </li>
                       <li>
-                        <a href="https://covidhelp-mmmut.herokuapp.com/" target="_ashu" className="dropdown-item" >
+                        <a
+                          href="https://covidhelp-mmmut.herokuapp.com/"
+                          target="_ashu"
+                          className="dropdown-item"
+                        >
                           Other Services
-                    </a>
-
+                        </a>
                       </li>
-
                     </ul>
                   </li>
                   <li className="nav-item">
@@ -121,55 +130,56 @@ function NavBar() {
                       activeClassName="nav-link activenav"
                       to="/welcome"
                       className="nav-link"
-
                     >
                       Dashboard
-                </NavLink>
+                    </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink
                       activeClassName="nav-link activenav"
                       to="/volunteer"
                       className="nav-link"
-
                     >
                       Volunteer
-                </NavLink>
+                    </NavLink>
                   </li>
-                  <li className="nav-item">
-
-                  </li>
+                  <li className="nav-item"></li>
                   <li className="nav-item">
                     <NavLink
                       activeClassName="nav-link activenav"
                       to="/contacts"
                       className="nav-link"
-
                     >
                       Contact Us
-                </NavLink>
+                    </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink
                       activeClassName="nav-link activenav"
                       to="/about"
                       className="nav-link"
-
                     >
                       AboutUs
-                </NavLink>
+                    </NavLink>
                   </li>
                   <li className="nav-item">
-
+                    <NavLink
+                      activeClassName="nav-link activenav"
+                      to="/team"
+                      className="nav-link"
+                    >
+                      Our Team
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
                     <NavLink
                       activeClassName="nav-link activenav"
                       to="/logout"
                       className="nav-link"
-
                     >
                       <button type="button" className="btn">
                         Logout
-                  </button>
+                      </button>
                     </NavLink>
                   </li>
                 </ul>
@@ -177,7 +187,7 @@ function NavBar() {
             </div>
           </nav>
         </>
-      )
+      );
     } else {
       return (
         <>
@@ -188,9 +198,13 @@ function NavBar() {
                 className="navbar-brand ps-5"
                 to="/"
               >
-                <img alt="logo" src={Logo} className="nav__logo d-inline-block " />
-             Home 2 Hospital
-          </NavLink>
+                <img
+                  alt="logo"
+                  src={Logo}
+                  className="nav__logo d-inline-block "
+                />
+                Tech For Cause
+              </NavLink>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -199,11 +213,14 @@ function NavBar() {
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
-                style={{ backgroundColor: '#311b92' }}
+                style={{ backgroundColor: "#311b92" }}
               >
                 <span className="navbar-toggler-icon"></span>
               </button>
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <div
+                className="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0 pe-5 ps-5">
                   <li className="nav-item">
                     <NavLink
@@ -212,79 +229,82 @@ function NavBar() {
                       className="nav-link"
                     >
                       Home
-                </NavLink>
+                    </NavLink>
                   </li>
                   <li className="nav-item dropdown">
                     <NavLink
                       to="/"
                       className="nav-link dropdown-toggle"
-
                       id="navbarDarkDropdownMenuLink"
                       role="button"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
                       Services
-                </NavLink>
+                    </NavLink>
                     <ul
                       className="dropdown-menu dropdown-menu-dark"
                       aria-labelledby="navbarDarkDropdownMenuLink"
                     >
                       <li>
-                        <NavLink exact to="/beds" className="dropdown-item" >
+                        <NavLink exact to="/beds" className="dropdown-item">
                           Beds
-                    </NavLink>
+                        </NavLink>
                       </li>
                       <li>
-                        <NavLink exact to="/oxygen" className="dropdown-item" >
+                        <NavLink exact to="/oxygen" className="dropdown-item">
                           Oxygen Cylinder
-                    </NavLink>
+                        </NavLink>
                       </li>
                       <li>
-                        <NavLink exact to="/hospital" className="dropdown-item" >
+                        <NavLink exact to="/hospital" className="dropdown-item">
                           Hospital Contact
-                    </NavLink>
-
+                        </NavLink>
                       </li>
 
                       <li>
-                        <NavLink exact to="/food" className="dropdown-item" >
+                        <NavLink exact to="/food" className="dropdown-item">
                           Food Services
-                    </NavLink>
-
+                        </NavLink>
                       </li>
                       <li>
-                        <NavLink exact to="/plasma" className="dropdown-item" >
+                        <NavLink exact to="/plasma" className="dropdown-item">
                           Plasma
-                    </NavLink>
-
+                        </NavLink>
                       </li>
 
                       <li>
-                        <NavLink exact to="/medicine" className="dropdown-item" >
+                        <NavLink exact to="/medicine" className="dropdown-item">
                           Medicine
-                    </NavLink>
-
+                        </NavLink>
                       </li>
                       <li>
-                        <a href="https://covidhelp-mmmut.herokuapp.com/mentalhelp" target="_ashu" className="dropdown-item" >
+                        <a
+                          href="https://covidhelp-mmmut.herokuapp.com/mentalhelp"
+                          target="_ashu"
+                          className="dropdown-item"
+                        >
                           Mental Help
-                    </a>
-
+                        </a>
                       </li>
                       <li>
-                        <NavLink exact to="/volunteer" className="dropdown-item" >
+                        <NavLink
+                          exact
+                          to="/volunteer"
+                          className="dropdown-item"
+                        >
                           Volunteer Resources
-                    </NavLink>
-
+                        </NavLink>
                       </li>
                       <li>
-                        <a href="https://covidhelp-mmmut.herokuapp.com/" target="_ashu" className="dropdown-item" >
+                        <a
+                          href="https://covidhelp-mmmut.herokuapp.com/"
+                          target="_ashu"
+                          className="dropdown-item"
+                        >
                           Other Services
-                    </a>
-
+                        </a>
                       </li>
-
                     </ul>
                   </li>
                   <li className="nav-item">
@@ -292,63 +312,57 @@ function NavBar() {
                       activeClassName="nav-link activenav"
                       to="/welcome"
                       className="nav-link"
-
                     >
                       Dashboard
-                </NavLink>
+                    </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink
                       activeClassName="nav-link activenav"
                       to="/volunteer"
                       className="nav-link"
-
                     >
                       Volunteer
-                </NavLink>
+                    </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink
                       activeClassName="nav-link activenav"
-                      to="/contacts"
+                      to="/team"
                       className="nav-link"
-
                     >
-                      Contact Us
-                </NavLink>
+                      Our Team
+                    </NavLink>
                   </li>
+
                   <li className="nav-item">
                     <NavLink
                       activeClassName="nav-link activenav"
                       to="/about"
                       className="nav-link"
-
                     >
                       AboutUs
-                </NavLink>
+                    </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink
                       activeClassName="nav-link activenav"
                       to="/login"
                       className="nav-link"
-
                     >
                       <button type="button" className="btn">
                         Sign Up / Sign In
-                  </button>
+                      </button>
                     </NavLink>
-
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
         </>
-      )
+      );
     }
-
-  }
+  };
   return (
     <div>
       <RenderMenu />
