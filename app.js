@@ -14,7 +14,7 @@ app.use(express.json());
 const router = require("./router/auth");
 app.use(router);
 
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
   app.get("*", function (req, res) {
     res.sendFile(
