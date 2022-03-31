@@ -130,7 +130,7 @@ function Plasma() {
         );
       })}
       <p style={{ fontWeight: "bold" }}>
-        Note: The Data being shown here are dummy right no, just to explain the
+        Note: The Data being shown here are dummy right now, just to explain the
         working of the platform!
       </p>
     </div>
