@@ -10,13 +10,13 @@ const Footer = () => {
             <div class="col-sm-12 col-md-6">
               <h6>About</h6>
               <p class="text-justify">
-                Tech For Cause is an initiative towards solving the problem of
-                finding covid resources in a situation where time is of great
-                essence. Tech For Cause is a non profitable service provider
-                which works to provide ease to government and patient on a
-                single platform, which shows details of availablity of bed,
-                medicine, covid resources and some other medical services at a
-                single spot.
+                Medical Support Services Portal (MSSP) is an initiative towards
+                solving the problem of finding covid resources in a situation
+                where time is of great essence. Medical Support Services Portal
+                (MSSP) is a non profitable service provider which works to
+                provide ease to government and patient on a single platform,
+                which shows details of availablity of bed, medicine, covid
+                resources and some other medical services at a single spot.
               </p>
               <button class="btn">
                 <Link to="/about">Know More</Link>
@@ -107,7 +107,7 @@ const Footer = () => {
                 Copyright &copy; 2022 All Rights Reserved by
                 <Link exact to="/">
                   {" "}
-                  Tech For Cause{" "}
+                  Medical Support Services Portal (MSSP){" "}
                 </Link>
                 .
               </p>

@@ -89,7 +89,7 @@ function Register() {
                   className="text-center"
                   style={{ color: "darkblue", fontWeight: "bolder" }}
                 >
-                  Tech For Cause
+                  Medical Support Services Portal (MSSP)
                 </p>
               </div>
             </div>
@@ -103,7 +103,7 @@ function Register() {
                     borderRadius: "0.5rem",
                   }}
                 >
-                  Register to Tech For Cause
+                  Register to Medical Support Services Portal (MSSP)
                 </h3>
                 <form method="POST">
                   <div class="row px-3">

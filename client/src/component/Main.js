@@ -50,11 +50,13 @@ function Main() {
                 className="font-weight-bold"
               >
                 {" "}
-                Tech For Cause
+                Medical Support Services Portal (MSSP)
               </h1>
               <p style={{ textAlign: "left" }} className="text__main">
-                <span style={{ color: "#311b92" }}>Tech For Cause</span> is an
-                initiative towards solving the problem of finding covid
+                <span style={{ color: "#311b92" }}>
+                  Medical Support Services Portal (MSSP)
+                </span>{" "}
+                is an initiative towards solving the problem of finding covid
                 resources in a situation where time is of great essence. Tech
                 For Cause is a non profitable service provider which works to
                 provide ease to government and patient on a single platform,

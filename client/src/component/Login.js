@@ -62,7 +62,7 @@ function Login() {
                   className="text-center"
                   style={{ color: "darkblue", fontWeight: "bolder" }}
                 >
-                  Tech For Cause
+                  Medical Support Services Portal (MSSP)
                 </p>
               </div>
             </div>
@@ -76,7 +76,7 @@ function Login() {
                     borderRadius: "0.5rem",
                   }}
                 >
-                  Login to Tech For Cause
+                  Login to Medical Support Services Portal (MSSP)
                 </h3>
 
                 <div class="row px-3 mb-4"></div>

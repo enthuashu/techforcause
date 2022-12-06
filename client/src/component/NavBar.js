@@ -21,7 +21,7 @@ function NavBar() {
                   src={Logo}
                   className="nav__logo d-inline-block "
                 />
-                Tech For Cause
+                MSSP
               </NavLink>
               <button
                 className="navbar-toggler"
@@ -162,7 +162,7 @@ function NavBar() {
                       AboutUs
                     </NavLink>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <NavLink
                       activeClassName="nav-link activenav"
                       to="/team"
@@ -170,7 +170,7 @@ function NavBar() {
                     >
                       Our Team
                     </NavLink>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
                     <NavLink
                       activeClassName="nav-link activenav"
@@ -203,7 +203,7 @@ function NavBar() {
                   src={Logo}
                   className="nav__logo d-inline-block "
                 />
-                Tech For Cause
+                MSSP
               </NavLink>
               <button
                 className="navbar-toggler"
@@ -325,7 +325,7 @@ function NavBar() {
                       Volunteer
                     </NavLink>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <NavLink
                       activeClassName="nav-link activenav"
                       to="/team"
@@ -333,7 +333,7 @@ function NavBar() {
                     >
                       Our Team
                     </NavLink>
-                  </li>
+                  </li> */}
 
                   <li className="nav-item">
                     <NavLink

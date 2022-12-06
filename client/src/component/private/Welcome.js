@@ -53,7 +53,8 @@ const Welcome = () => {
       >
         <br />
         <h3 class="display-8">
-          WELCOME TO OFFICIAL DASHBOARD OF Tech For Cause
+          WELCOME TO OFFICIAL DASHBOARD OF Medical Support Services Portal
+          (MSSP)
         </h3>
         <span
           style={{
